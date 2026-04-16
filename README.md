@@ -1,2 +1,84 @@
-# Perd-n-
-Para mi hermosa 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti 💖</title>
+<style>
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: Arial;
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+.container {
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 20px;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.next { background: #ff4d6d; color: white; }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="content">
+  <h2>💌 Hola mi hermosa 🥺💖</h2>
+  <p>Presiona para continuar...</p>
+  <button class="next" onclick="nextStep()">Siguiente</button>
+</div>
+
+<script>
+let step = 0;
+
+function nextStep() {
+  step++;
+  const content = document.getElementById("content");
+
+  if(step === 1){
+    content.innerHTML = `
+      <h2>💖 Gracias por seguir...</h2>
+      <p>Esto viene directo de mi corazón...</p>
+      <button class="next" onclick="nextStep()">Continuar</button>
+    `;
+  }
+
+  else if(step === 2){
+    content.innerHTML = `
+      <h2>😔 Perdón...</h2>
+      <p>Sé que cometí un error y me duele haberte lastimado</p>
+      <button class="next" onclick="nextStep()">Ver más</button>
+    `;
+  }
+
+  else if(step === 3){
+    content.innerHTML = `
+      <h2>💖 Eres muy importante para mí</h2>
+      <p>No quiero perderte por algo que hice mal</p>
+      <button class="next" onclick="nextStep()">Mensaje final</button>
+    `;
+  }
+
+  else {
+    content.innerHTML = `
+      <h2>🥺 Perdóname mi hermosa</h2>
+      <p>Te amo muchísimo y quiero hacerlo mejor ❤️</p>
+      <h3>¿Me perdonas?</h3>
+      <button>💖 Sí</button>
+      <button>💔 Aún no</button>
+    `;
+  }
+}
+</script>
+
+</body>
+</html>
